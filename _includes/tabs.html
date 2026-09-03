@@ -1,0 +1,11 @@
+{%- assign here = page.url -%}
+<nav class="tabs" aria-label="주 메뉴">
+  <a class="tab tab-home" href="{{ '/' | relative_url }}">~/{{ site.title }}</a>
+  <a class="tab{% if here == '/' %} on{% endif %}" href="{{ '/' | relative_url }}">posts/</a>
+  <a class="tab{% if here contains '/series/' %} on{% endif %}" href="{{ '/series/' | relative_url }}">series/</a>
+  <a class="tab{% if here contains '/tags/' %} on{% endif %}" href="{{ '/tags/' | relative_url }}">tags/</a>
+  {%- if site.categories.size > 0 -%}<a class="tab{% if here contains '/categories/' %} on{% endif %}" href="{{ '/categories/' | relative_url }}">categories/</a>{%- endif -%}
+  <a class="tab{% if here == '/about/' %} on{% endif %}" href="{{ '/about/' | relative_url }}">about.md</a>
+  {%- if page.layout == 'post' -%}<span class="tab on file">{{ page.date | date: '%Y-%m-%d' }}-{{ page.slug | default: page.title | slugify }}.md</span>{%- endif -%}
+  <a class="tab tab-gh" href="https://github.com/{{ site.author.github }}" rel="me">github</a>
+</nav>

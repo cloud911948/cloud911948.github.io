@@ -1,4 +1,4 @@
-# About 페이지 "글 시리즈". tag 는 글 front matter 의 tags 와 일치시킨다.
-- name: JDK 27 이행
-  desc: G1 기본화·압축 객체 헤더가 운영 중인 서비스에 무엇을 바꾸는지, 도구를 만들며 확인한 것들
-  tag: jdk27
+# 시리즈 정본. 글 front matter 의 `series: <id>` 와 연결. About·시리즈 페이지가 여기서 읽는다.
+- id: jdk27
+  name: JDK 27 이행
+  desc: G1 기본화·압축 객체 헤더가 운영 중인 서비스에 무엇을 바꾸는지, 도구를 만들며 확인한 것들.

@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<div class="wrap">
+  <aside class="side">
+    <div class="prompt">~/{{ site.title }}</div>
+    <p class="muted">{{ site.tagline }}</p>
+    <ul class="side-nav">
+      <li><a href="{{ '/' | relative_url }}" class="on">./posts</a></li>
+      <li><a href="{{ '/series/' | relative_url }}">./series</a></li>
+      <li><a href="{{ '/tags/' | relative_url }}">./tags</a></li>
+      {% if site.categories.size > 0 %}<li><a href="{{ '/categories/' | relative_url }}">./categories</a></li>{% endif %}
+      <li><a href="{{ '/about/' | relative_url }}">./about</a></li>
+    </ul>
+    <div class="side-foot"><a href="https://github.com/{{ site.author.github }}">github.com/{{ site.author.github }}</a></div>
+  </aside>
+  <section class="list">
+    <div class="list-head">posts · {{ site.posts.size }} · sorted by date desc</div>
+    {{ content }}
+    {% if site.posts.size == 0 %}<div class="empty">// 첫 글을 준비하고 있습니다</div>{% endif %}
+    {% for post in site.posts %}
+    <article class="row">
+      <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+      <div class="body">
+        <a class="title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        {% if post.description %}<p class="desc">{{ post.description }}</p>{% endif %}
+      </div>
+      <div class="meta">{% if post.series %}<a href="{{ '/series/#' | append: post.series | relative_url }}">{{ post.series }}</a> · {% endif %}{% assign words = post.content | strip_html | size %}{{ words | divided_by: 900 | plus: 1 }} min</div>
+    </article>
+    {% endfor %}
+  </section>
+</div>

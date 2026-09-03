@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{%- assign s = site.data.series | where: 'id', page.series | first -%}
+{%- if page.series -%}{%- assign in_series = site.posts | where: 'series', page.series | sort: 'date' -%}{%- endif -%}
+<div class="wrap post-wrap">
+  <article class="article">
+    <div class="meta-line">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y-%m-%d' }}</time>
+      {% if s %}<a href="{{ '/series/#' | append: s.id | relative_url }}">{{ s.name }}</a>{% for p in in_series %}{% if p.url == page.url %} · {{ forloop.index }}/{{ in_series.size }}{% endif %}{% endfor %}{% endif %}
+      {% assign words = content | strip_html | size %}<span>{{ words | divided_by: 900 | plus: 1 }} min</span>
+    </div>
+    <h1 class="h1">{{ page.title }}</h1>
+    {% if page.tags.size > 0 %}<div class="tags">{% for t in page.tags %}<a href="{{ '/tags/#' | append: t | slugify | relative_url }}">#{{ t }}</a>{% endfor %}</div>{% endif %}
+    <div class="content">{{ content }}</div>
+    {% if in_series and in_series.size > 1 %}
+    <nav class="series-nav">
+      <div class="label">// {{ s.name }} 시리즈</div>
+      <ol>{% for p in in_series %}<li{% if p.url == page.url %} class="on"{% endif %}><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>{% endfor %}</ol>
+    </nav>
+    {% endif %}
+    <div class="byline">{{ site.author.name }} — {{ site.tagline }}</div>
+  </article>
+  <aside class="toc" id="toc" hidden><div class="label">// 목차</div><ol id="toc-list"></ol></aside>
+</div>

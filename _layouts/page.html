@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<div class="wrap">
+  <aside class="side">
+    <div class="prompt">~/{{ site.title }}</div>
+    <ul class="side-nav">
+      <li><a href="{{ '/' | relative_url }}">./posts</a></li>
+      <li><a href="{{ '/series/' | relative_url }}"{% if page.url contains '/series/' %} class="on"{% endif %}>./series</a></li>
+      <li><a href="{{ '/tags/' | relative_url }}"{% if page.url contains '/tags/' %} class="on"{% endif %}>./tags</a></li>
+      {% if site.categories.size > 0 %}<li><a href="{{ '/categories/' | relative_url }}"{% if page.url contains '/categories/' %} class="on"{% endif %}>./categories</a></li>{% endif %}
+      <li><a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} class="on"{% endif %}>./about</a></li>
+    </ul>
+  </aside>
+  <article class="article page">
+    <h1 class="h1">{{ page.title }}</h1>
+    {{ content }}
+  </article>
+</div>

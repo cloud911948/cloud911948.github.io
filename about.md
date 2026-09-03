@@ -1,6 +1,7 @@
 ---
-icon: fas fa-info-circle
-order: 4
+layout: page
+title: about.md
+permalink: /about/
 ---
 
 12년차 자바 백엔드 개발자입니다. 결제·포인트·통합 ID 플랫폼을 만들고 운영해 왔고, 요즘은 JVM 런타임 이행과 운영 도구에 관심이 있습니다.
@@ -13,10 +14,10 @@ order: 4
 
 ## 글 시리즈
 
-{% for s in site.data.series %}
-{% assign n = site.tags[s.tag] | size %}- **{{ s.name }}** — {{ s.desc }}{% if n > 0 %} ([글 {{ n }}편](/tags/{{ s.tag }}/)){% else %} (준비 중){% endif %}
+{% for s in site.data.series %}{% assign n = site.posts | where: 'series', s.id | size %}
+- **{{ s.name }}** — {{ s.desc }}{% if n > 0 %} ([{{ n }}편]({{ '/series/#' | append: s.id | relative_url }})){% else %} (준비 중){% endif %}
 {% endfor %}
 
 ## 연락
 
-- GitHub: [cloud911948](https://github.com/cloud911948)
+- GitHub: [{{ site.author.github }}](https://github.com/{{ site.author.github }})
