@@ -14,7 +14,7 @@ order: 4
 ## 글 시리즈
 
 {% for s in site.data.series %}
-- **{{ s.name }}** — {{ s.desc }}{% if s.tag %} ([글 보기](/tags/{{ s.tag }}/)){% endif %}
+{% assign n = site.tags[s.tag] | size %}- **{{ s.name }}** — {{ s.desc }}{% if n > 0 %} ([글 {{ n }}편](/tags/{{ s.tag }}/)){% else %} (준비 중){% endif %}
 {% endfor %}
 
 ## 연락
