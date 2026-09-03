@@ -1,0 +1,5 @@
+# About 페이지 "만든 것" 목록. 항목 추가 = 여기 한 줄.
+- name: jvm-risk-scanner
+  url: https://github.com/cloud911948/jvm-risk-scanner
+  desc: JDK 27 이행 전 저장소를 보고 GC·압축 객체 헤더 영향, EOL, 고위험 CVE를 진단하는 GitHub Action
+  status: 진행 중
