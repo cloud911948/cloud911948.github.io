@@ -1,10 +1,10 @@
 ---
 layout: page
-title: categories/
+title: 카테고리
 permalink: /categories/
 ---
 
-{% if site.categories.size == 0 %}<p class="empty">// 글이 쌓이면 카테고리가 생깁니다</p>{% endif %}
+{% if site.categories.size == 0 %}<p class="empty">글이 쌓이면 카테고리가 생깁니다.</p>{% endif %}
 {% assign sorted = site.categories | sort %}
 {% for c in sorted %}
 <section class="group" id="{{ c[0] | slugify }}">

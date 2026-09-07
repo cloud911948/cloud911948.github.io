@@ -1,6 +1,6 @@
 ---
 layout: page
-title: series/
+title: 시리즈
 permalink: /series/
 ---
 
@@ -8,6 +8,6 @@ permalink: /series/
 <section class="group" id="{{ s.id }}">
 <h2>{{ s.name }} <span class="count">{{ posts.size }}</span></h2>
 <p class="muted">{{ s.desc }}</p>
-{% if posts.size == 0 %}<p class="empty">// 준비 중</p>{% else %}<ol class="plain">{% for p in posts %}<li><time>{{ p.date | date: '%Y-%m-%d' }}</time> <a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>{% endfor %}</ol>{% endif %}
+{% if posts.size == 0 %}<p class="empty">준비 중입니다.</p>{% else %}<ol class="plain">{% for p in posts %}<li><time>{{ p.date | date: '%Y-%m-%d' }}</time> <a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>{% endfor %}</ol>{% endif %}
 </section>
 {% endfor %}

@@ -1,6 +1,7 @@
 title: cloud911948
-tagline: 자바 백엔드 12년. JVM과 운영 도구.
+tagline: 자바 백엔드 12년.
 description: 12년차 자바 백엔드 개발자의 기술 블로그. JVM 런타임 이행, Spring 운영, 직접 만든 도구 이야기.
+intro: JVM 런타임 이행과 운영 도구를 만들며 확인한 것을 씁니다.
 url: "https://cloud911948.github.io"
 baseurl: ""
 lang: ko

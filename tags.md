@@ -1,10 +1,10 @@
 ---
 layout: page
-title: tags/
+title: 태그
 permalink: /tags/
 ---
 
-{% if site.tags.size == 0 %}<p class="empty">// 아직 태그가 없습니다</p>{% endif %}
+{% if site.tags.size == 0 %}<p class="empty">아직 태그가 없습니다.</p>{% endif %}
 {% assign sorted = site.tags | sort %}
 <div class="tag-cloud">{% for t in sorted %}<a href="#{{ t[0] | slugify }}">#{{ t[0] }} <span class="count">{{ t[1].size }}</span></a>{% endfor %}</div>
 {% for t in sorted %}

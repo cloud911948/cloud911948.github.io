@@ -1,6 +1,6 @@
 ---
 layout: page
-title: about.md
+title: 소개
 permalink: /about/
 ---
 
