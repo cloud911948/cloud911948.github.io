@@ -55,11 +55,11 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .content pre { margin: 0; }
 .content pre code { background: none; border: 0; padding: 0; font-size: 13.5px; line-height: 1.7; color: var(--code-ink); }
 .content div.highlighter-rouge, .content figure.highlight { margin: 0 0 24px; border-radius: 6px; background: var(--code-bg); overflow: hidden; }
-.content div.highlighter-rouge::before, .content figure.highlight::before { content: attr(data-lang); display: block; padding: 7px 16px; border-bottom: 1px solid var(--code-line); font-family: var(--mono); font-size: 12px; color: #8b95a1; }
-.content .highlight { padding: 12px 0; overflow-x: auto; }
+.content .highlight { padding: 14px 0; overflow-x: auto; }
+.content .highlight pre.lineno { margin: 0; }
 .content .highlight table, .content .highlight td, .content .highlight th { border: 0; padding: 0; margin: 0; width: auto; font-size: inherit; }
-.content .highlight .gutter { color: #5c6570; text-align: right; padding: 0 14px 0 16px; user-select: none; }
-.content .highlight .code { padding-right: 16px; }
+.content .highlight .rouge-gutter { color: #5c6570; text-align: right; padding: 0 14px 0 16px; user-select: none; }
+.content .highlight .rouge-code { padding-right: 16px; }
 .content .highlight pre { background: none; }
 .content hr { border: 0; border-top: 1px solid var(--line); margin: 44px 0; }
 .article .tags { margin-top: 40px; }
