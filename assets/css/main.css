@@ -104,3 +104,8 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .highlight .go { color: var(--code-ink); }
 .highlight .err { color: #ff5370; }
 .highlight .gh, .highlight .gu { color: #8ae0b6; font-weight: 600; }
+
+/* 인라인 SVG 다이어그램(mermaid 렌더본). 폭에 맞춰 축소, 캡션은 모노 소형 */
+.content figure.diagram { margin: 0 0 28px; padding: 12px 8px; border: 1px solid var(--line); border-radius: 6px; background: #fff; overflow-x: auto; }
+.content figure.diagram svg { display: block; max-width: 100%; height: auto; }
+.content figure.diagram figcaption { margin-top: 8px; font-family: var(--mono); font-size: 12.5px; color: var(--muted); line-height: 1.6; }
