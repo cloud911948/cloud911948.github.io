@@ -18,5 +18,5 @@ layout: default
     <ol>{% for p in in_series %}<li{% if p.url == page.url %} class="on"{% endif %}><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>{% endfor %}</ol>
   </nav>
   {% endif %}
-  <div class="byline">{{ site.author.name }} · {{ site.tagline }}</div>
+  <div class="byline">{{ site.author.name }}</div>
 </article>
